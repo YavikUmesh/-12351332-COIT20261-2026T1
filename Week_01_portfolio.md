@@ -148,11 +148,11 @@ This screenshot shows the configuration of the eth0 interface where the static I
 
 ![Network Configuration](Images/week_1_1.png)
 
-## 9.3 Linux Console Output
+## 9.3 Linux Console Input
 
-This screenshot shows the output of the command used to verify the network configuration.
+This screenshot shows the Input of the command used to verify the network configuration.
 
-![Console Output](Images/Week_1_3.png)
+![Console Input](Images/Week_1_3.png)
 
 # 10. What I Learned
 
