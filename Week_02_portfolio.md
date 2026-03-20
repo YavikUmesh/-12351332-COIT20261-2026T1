@@ -33,10 +33,10 @@ To configure static IP addresses on Linux hosts using three different methods:
 - Used GNS3 GUI to assign static IP addresses before starting nodes.
 
  **Host 1 IP Configuration**  
-![Host 1](Setting-IP-<studentid>-host1.png)
+![Host 1](Images/Week_2_Host1.png)
 
  **Host 2 IP Configuration**  
-![Host 2](Setting-IP-<studentid>-host2.png)
+![Host 2](Images/Week_2_Host2.png)
 
 ---
 
@@ -44,7 +44,7 @@ To configure static IP addresses on Linux hosts using three different methods:
 
 Edited network configuration file:
 
-```bash
+
 sudo nano /etc/network/interfaces
 
 auto eth0
@@ -53,7 +53,7 @@ iface eth0 inet static
     netmask 255.255.255.0
 
 ### Host 3 Configuration Output
-![Host 3](Setting-IP-<studentid>-host2.png)
+![Host 3](Images/Week_2_Host3.png)
 
 ### Host D (ip command)
 
@@ -71,23 +71,21 @@ ip address show
 
 All hosts successfully configured with correct IP addresses.
 
-![Host 3](Setting-IP-<studentid>-host2.png)
+![All Host Configured](Images/Week_2_1.png)
 
-Basic Ping Test
+### Basic Ping Test
 
 Command used:
 
 ping 10.10.2.2
 
-Sent multiple packets from Host A to Host B
+Sent multiple packets from Host 1 to Host 2
 
 Stopped after 5 responses using Ctrl + C
 
-![Host 3](Setting-IP-<studentid>-host2.png)
-
  #### Ping Basic Output
-
-![Host 3](Setting-IP-<studentid>-host2.png)
+ 
+![Ping Test](Images/Week_2_Ping1.png)
 
 #### Result:
 
@@ -105,7 +103,7 @@ ping 10.1.1.99
 
 ### Ping Error Output
 
-![Host 3](Setting-IP-<studentid>-host2.png)
+![Host 3](Images/Week_2_Ping2.png)
 
  Result:
 
@@ -115,15 +113,12 @@ No replies received
 
 Destination unreachable
 
-Ping with Options
-
-Command:
-
-ping -c 5 -i 2 -s 100 10.1.1.2
 
  ### Ping with Options Output
 
-![Host 3](Setting-IP-<studentid>-host2.png)
+Command:
+
+ping -c 5 -i 2 -s 100 10.10.2.2
 
 #### Explanation:
 
@@ -132,3 +127,8 @@ ping -c 5 -i 2 -s 100 10.1.1.2
 -i 2 → 2-second interval
 
 -s 100 → packet size = 100 bytes
+
+
+![Ping With Other Option Output](Setting-IP-<studentid>-host2.png)
+
+
