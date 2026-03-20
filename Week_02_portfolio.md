@@ -131,6 +131,6 @@ ping -c 5 -i 2 -s 100 10.10.2.2
 -s 100 → packet size = 100 bytes
 
 
-![Ping With Other Option Output](Setting-IP-<studentid>-host2.png)
+![Ping With Other Option Output](Images/Week_2_Ping3.png)
 
 
