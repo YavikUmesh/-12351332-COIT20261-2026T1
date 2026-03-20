@@ -55,13 +55,15 @@ iface eth0 inet static
 ### Host 3 Configuration Output
 ![Host 3](Images/Week_2_Host3.png)
 
-### Host D (ip command)
+### Host 4 (ip command)
 
 Assigned IP using:
 
 sudo ip address add 10.1.1.4/24 dev eth0
 
  ### Host 4 Configuration Output
+
+ ![Host 4](Images/Week_2_Host4.png)
 
 ### Verification
 
