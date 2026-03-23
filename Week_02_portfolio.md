@@ -14,7 +14,7 @@ To configure static IP addresses on Linux hosts using three different methods:
 - 1 × Ethernet Switch  
 - Network: `10.10.2.0/24`  
    **Network Diagram**  
-![Network Topology](Iamges/Setting-IP-12315332.gns3project)
+![Network Topology](Images/Setting-IP-12315332.gns3project)
 ---
 ##  IP Address Allocation  
 
