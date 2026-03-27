@@ -25,13 +25,13 @@ The network consists of:
 ### 1. Start Netcat Server (Host2)
 
 ```bash
-nc -l -p 23456
+nc -l -p 12345
 ```
 
 ### 2. Start Netcat Client (Host1)
 
 ```bash
-nc 10.1.1.2 23456
+nc 10.1.1.2 12345
 ```
 
 ---
@@ -41,7 +41,7 @@ nc 10.1.1.2 23456
 ### Client (Host1)
 
 ```bash
-nc 10.1.1.2 23456
+nc 10.1.1.2 12345
 Yavik Dayaram
 12315332
 ```
@@ -49,7 +49,7 @@ Yavik Dayaram
 ### Server (Host2)
 
 ```bash
-nc -l -p 23456
+nc -l -p 12345
 Yavik Dayaram
 12315332
 ```
@@ -107,13 +107,13 @@ ping -c 3 10.1.1.2
 #### On Host3 (Server):
 
 ```bash
-nc -l -p 23456
+nc -l -p 12345
 ```
 
 #### On Host1 (Client):
 
 ```bash
-nc 10.1.1.3 23456
+nc 10.1.1.3 12345
 ```
 
 #### Message Sent:
