@@ -88,10 +88,10 @@ To capture packets transmitted between hosts and export the capture file.
 * Select **Start Capture**
 * File name:
 
-```
+
 ![Capture File](Images/Capture-Basics-12315332-ping-netcat.pcap)
 
-```
+
 
 ---
 
@@ -152,9 +152,8 @@ The capture file was retrieved from the GNS3 VM using **FileZilla**.
 
 ## Output File
 
-```
 ![Capture File](Images/Capture-Basics-12315332-ping-netcat.pcap)
-```
+
 
 ---
 
