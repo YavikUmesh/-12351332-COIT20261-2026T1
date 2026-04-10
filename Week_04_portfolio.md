@@ -18,8 +18,8 @@ Learn how to view routing tables and enable forwarding on a router.
 
 Two subnets were created:
 
-- Subnet A: `10.1.1.0/24`  
-- Subnet B: `10.1.2.0/24`  
+- Subnet A: `10.10.1.0/24`  
+- Subnet B: `10.10.2.0/24`  
 
 ---
 
@@ -27,11 +27,11 @@ Two subnets were created:
 
 | Device   | Interface | IP Address | Netmask       | Gateway     |
 |----------|----------|------------|---------------|------------|
-| Host1    | eth0     | 10.1.1.2   | 255.255.255.0 | 10.1.1.1   |
-| Host2    | eth0     | 10.1.1.3   | 255.255.255.0 | 10.1.1.1   |
-| Router1  | eth0     | 10.1.1.1   | 255.255.255.0 | -          |
-| Router1  | eth1     | 10.1.2.1   | 255.255.255.0 | -          |
-| Host3    | eth0     | 10.1.2.2   | 255.255.255.0 | 10.1.2.1   |
+| Host1    | eth0     | 10.10.1.2   | 255.255.255.0 | 10.10.1.1   |
+| Host2    | eth0     | 10.10.1.3   | 255.255.255.0 | 10.10.1.1   |
+| Router1  | eth0     | 10.10.1.1   | 255.255.255.0 | -          |
+| Router1  | eth1     | 10.10.2.1   | 255.255.255.0 | -          |
+| Host3    | eth0     | 10.10.2.2   | 255.255.255.0 | 10.10.2.1   |
 
 ---
 
@@ -49,30 +49,30 @@ sysctl net.ipv4.ip_forward=0
 
 ip route show
 
-default via 10.1.1.1 dev eth0
-10.1.1.0/24 dev eth0 proto kernel scope link src 10.1.1.2
+default via 10.10.1.1 dev eth0
+10.10.1.0/24 dev eth0 proto kernel scope link src 10.10.1.2
 
 ### Host2
 
 ip route show
 
-default via 10.1.1.1 dev eth0
-10.1.1.0/24 dev eth0 proto kernel scope link src 10.1.1.3
+default via 10.10.1.1 dev eth0
+10.10.1.0/24 dev eth0 proto kernel scope link src 10.10.1.3
 
 ### Host3
 
 ip route show
 
-default via 10.1.2.1 dev eth0
-10.1.2.0/24 dev eth0 proto kernel scope link src 10.1.2.2
+default via 10.10.2.1 dev eth0
+10.10.2.0/24 dev eth0 proto kernel scope link src 10.10.2.2
 
 
 ### Router1
 
-ping 10.1.2.2
+ping 10.10.2.2
 
-64 bytes from 10.1.2.2: icmp_seq=1 ttl=63 time=1.2 ms
-64 bytes from 10.1.2.2: icmp_seq=2 ttl=63 time=1.1 ms
+64 bytes from 10.10.2.2: icmp_seq=1 ttl=63 time=1.2 ms
+64 bytes from 10.10.2.2: icmp_seq=2 ttl=63 time=1.1 ms
 
 
 ## Observations
