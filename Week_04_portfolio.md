@@ -40,7 +40,7 @@ Two subnets were created:
 ### Router
 ```bash
 sysctl net.ipv4.ip_forward=1
-
+```
 ## Hosts
 sysctl net.ipv4.ip_forward=0
 
