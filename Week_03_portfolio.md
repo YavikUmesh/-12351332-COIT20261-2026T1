@@ -67,7 +67,7 @@ Yavik Dayaram
 ## Screenshot
 
 
-![Netcat Communication](Images/Week_3.1.png)
+![Netcat Communication](Images/Week_3.3.png)
 ![Netcat Communication](Images/Week_3.2.png)
 
 ---
@@ -89,7 +89,8 @@ To capture packets transmitted between hosts and export the capture file.
 * File name:
 
 ```
-Capture-Basics-12315332-ping-netcat.pcap
+![Capture File](Images/Capture-Basics-12315332-ping-netcat.pcap)
+
 ```
 
 ---
@@ -127,7 +128,7 @@ Yavik Dayaram
 ### 4. Stop Capture
 
 * Right-click the link → **Stop Capture**
-
+![Netcat Communication](Images/Week_3.4.png)
 ---
 
 ### 5. Transfer Capture File
@@ -152,7 +153,7 @@ The capture file was retrieved from the GNS3 VM using **FileZilla**.
 ## Output File
 
 ```
-Capture-Basics-12315332-ping-netcat.pcap
+![Capture File](Images/Capture-Basics-12315332-ping-netcat.pcap)
 ```
 
 ---
@@ -179,6 +180,10 @@ In this tutorial:
 
 # Files Submitted
 
-* `Netcat-Basics-12315332-client-server.png`
-* `Capture-Basics-12315332-ping-netcat.pcap`
+![Netcat Communication](Images/Week_3.0.png)
+![Netcat Communication](Images/Week_3.1.png)
+![Netcat Communication](Images/Week_3.2.png)
+![Netcat Communication](Images/Week_3.3.png)
+![Netcat Communication](Images/Week_3.4.png)
+![Capture File](Images/Capture-Basics-12315332-ping-netcat.pcap)
 
