@@ -1,11 +1,4 @@
 # Week 05 Tutorial - VLAN Configuration with OpenvSwitch and Linux Router
-
-**Student Name:** Yavik Umesh  
-**Student ID:** [Your Student ID]  
-**Course:** [Course Code/Name]  
-**Week:** 05  
-**Date:** April 2026
-
 ---
 
 ## Task 1: Setup VLANs on Switch (Vlan-Basics)
