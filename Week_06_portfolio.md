@@ -156,11 +156,11 @@ ping -c 4 192.168.20.30
 
 ## Files included in repository:
 
-ARP-Basics-<YourStudentID>-HostA-Table*.png
-Default-Gateway-<YourStudentID>.gns3project
-Default-Gateway-<YourStudentID>-network.png
-Default-Gateway-<YourStudentID>-routing-tables.png
-Default-Gateway-<YourStudentID>-ping.png
+- ARP-Basics-<YourStudentID>-HostA-Table*.png
+- Default-Gateway-<YourStudentID>.gns3project
+- Default-Gateway-<YourStudentID>-network.png
+- Default-Gateway-<YourStudentID>-routing-tables.png
+- Default-Gateway-<YourStudentID>-ping.png
 
 
 
