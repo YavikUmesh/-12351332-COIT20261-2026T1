@@ -164,11 +164,11 @@ traceroute <Host2-IP>
 
 
 ## Files Submitted
-View-Routes-<studentid>.gns3project
-View-Routes-<studentid>-network.png
-View-Routes-<studentid>-ping.png
-OSPF-Basics-<studentid>.gns3project
-OSPF-Basics-<studentid>-network.png
+- View-Routes-<studentid>.gns3project
+- View-Routes-<studentid>-network.png
+- View-Routes-<studentid>-ping.png
+- OSPF-Basics-<studentid>.gns3project
+- OSPF-Basics-<studentid>-network.png
 
 
 
