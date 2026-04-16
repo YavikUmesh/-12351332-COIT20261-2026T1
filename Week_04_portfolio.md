@@ -1,6 +1,4 @@
 # Week 04 Tutorial – Routing & OSPF  
-**Student ID:** `12315332`
-
 ---
 
 # Task 1: View Routing Tables
