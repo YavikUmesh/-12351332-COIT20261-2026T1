@@ -137,14 +137,14 @@ eth0 configured as trunk (trunks=[])
 
 ## Files included in this repository:
 
-Vlan-Basics-<YourStudentID>.gns3project
-Vlan-Router-<YourStudentID>.gns3project
-Vlan-Basics-<YourStudentID>-network.png
-Vlan-Basics-<YourStudentID>-ports.png
-Vlan-Router-<YourStudentID>-network.png
-Vlan-Router-<YourStudentID>-ports.png
+- Vlan-Basics-<YourStudentID>.gns3project
+- Vlan-Router-<YourStudentID>.gns3project
+- Vlan-Basics-<YourStudentID>-network.png
+- Vlan-Basics-<YourStudentID>-ports.png
+- Vlan-Router-<YourStudentID>-network.png
+- Vlan-Router-<YourStudentID>-ports.png
 
-
+![Netcat Communication](Images/Week_5.1.png)
 
 
 
