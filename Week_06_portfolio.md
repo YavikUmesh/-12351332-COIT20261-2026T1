@@ -155,7 +155,7 @@ ping -c 4 192.168.20.30
 - Default-Gateway-<YourStudentID>-routing-tables.png
 - Default-Gateway-<YourStudentID>-ping.png
 
-
+![Default Gateway](Images/Week_4.1.png)
 
 
 
