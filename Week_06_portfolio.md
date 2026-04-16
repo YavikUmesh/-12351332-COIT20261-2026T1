@@ -1,11 +1,4 @@
 # Week 06 Tutorial - ARP and Default Gateways
-
-**Student Name:** Yavik Umesh  
-**Student ID:** [Your Student ID]  
-**Course:** [Course Code/Name]  
-**Week:** 06  
-**Date:** April 2026
-
 ---
 
 ## Task 1: Resolving IP Addresses to Hardware Addresses (ARP Basics)
