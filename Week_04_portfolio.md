@@ -18,7 +18,7 @@ Two subnets were created:
 
 - Subnet A: `10.10.1.0/24`  
 - Subnet B: `10.10.2.0/24`  
-
+![Network Topology](Images/Week_4.1.png)
 ---
 
 ## IP Address Configuration
@@ -170,7 +170,7 @@ traceroute <Host2-IP>
 - OSPF-Basics-<studentid>.gns3project
 - OSPF-Basics-<studentid>-network.png
 
-![Netcat Communication](Images/Week_4.1.png)
+
 
 
 
