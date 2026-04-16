@@ -149,6 +149,7 @@ ping -c 4 192.168.20.30
 ### Summary of Routing Tables:
 
 |Device|Key Routes|
+|--------|------------------|
 |Host A|default via 192.168.10.1|
 |Router 1|"192.168.10.0/24 (connected), 192.168.30.0/24 (connected), 192.168.20.0/24 via 192.168.30.2"|
 |Host C|default via 192.168.20.1|
