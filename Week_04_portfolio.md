@@ -170,7 +170,7 @@ traceroute <Host2-IP>
 - OSPF-Basics-<studentid>.gns3project
 - OSPF-Basics-<studentid>-network.png
 
-
+![Netcat Communication](Images/Week_4.1.png)
 
 
 
