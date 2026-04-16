@@ -144,7 +144,7 @@ eth0 configured as trunk (trunks=[])
 - Vlan-Router-<YourStudentID>-network.png
 - Vlan-Router-<YourStudentID>-ports.png
 
-![Netcat Communication](Images/Week_5.1.png)
+![Vlan](Images/Week_5.1.png)
 
 
 
