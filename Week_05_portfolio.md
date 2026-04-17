@@ -59,7 +59,7 @@ ARP tables checked using arp -a on each host.
 
 ![Vlan Network Topology](Images/Week_5_NetworkTopologyVLAN.png)
 ![Vlan Ping Test](Images/Week_5_PingTest.png)
-![Vlan Network](Images/Vlan-Basics-12315332.gns3project)
+- ![Vlan Network](Images/Vlan-Basics-12315332.gns3project)
 
 
 
