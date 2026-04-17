@@ -142,6 +142,7 @@ iface eth1 inet static
 ping -c 3 10.10.3.103
 ```
 - Traffic path: Host A → Router 1 → Router 2 → Host C
+  
 ![Ping Test](Images/Week_6_PingNeighbour.png)
 
 ## Outputs - Task 2
@@ -149,6 +150,7 @@ ping -c 3 10.10.3.103
 ## Files included in repository:
 
 ![Default Gateway Output](Images/Week_6_NetworkTopologyGateway.png)
+
 - ![Default Gateway](Images/Default-Gateway-12315332.gns3project)
 
 
