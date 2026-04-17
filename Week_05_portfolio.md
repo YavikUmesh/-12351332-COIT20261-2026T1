@@ -128,7 +128,7 @@ ARP tables verified on hosts and router.
 ## Files included in this repository:
 
 ![Vlan Network Topology](Images/Week_5_NetworkTopologyRouter.png)
-![Vlan](Images/Vlan-Router-12315332.gns3project)
+- ![Vlan Router](Images/Vlan-Router-12315332.gns3project)
 
 
 
