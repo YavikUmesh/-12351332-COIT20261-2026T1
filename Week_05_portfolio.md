@@ -17,7 +17,7 @@
   - Host 4 → Switch `eth4`
   - Switch `eth0` left unused
     
-![Vlan Network Topology](Images/Week_5_NetworkTopologyVLAN.png.png)
+![Vlan Network Topology](Images/Week_5_NetworkTopologyVLAN.png)
 
 ### IP Addressing (Same Subnet - Before VLANs)
 All hosts configured with IP addresses, for example:
