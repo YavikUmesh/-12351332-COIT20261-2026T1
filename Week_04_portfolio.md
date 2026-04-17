@@ -25,11 +25,11 @@ Two subnets were created:
 
 | Device   | Interface | IP Address | Netmask       | Gateway     |
 |----------|----------|------------|---------------|------------|
-| Host1    | eth0     | 10.10.1.2   | 255.255.255.0 | 10.10.1.1   |
-| Host2    | eth0     | 10.10.1.3   | 255.255.255.0 | 10.10.1.1   |
+| Host1    | eth0     | 10.10.1.101   | 255.255.255.0 | 10.10.1.1   |
+| Host2    | eth0     | 10.10.1.102   | 255.255.255.0 | 10.10.1.1   |
 | Router1  | eth0     | 10.10.1.1   | 255.255.255.0 | -          |
 | Router1  | eth1     | 10.10.2.1   | 255.255.255.0 | -          |
-| Host3    | eth0     | 10.10.2.2   | 255.255.255.0 | 10.10.2.1   |
+| Host3    | eth0     | 10.10.2.103  | 255.255.255.0 | 10.10.2.1   |
 
 ---
 
@@ -40,8 +40,11 @@ Two subnets were created:
 sysctl net.ipv4.ip_forward=1
 ```
 ![Router](Images/Week_4_Router1.png)
+
 ## Hosts
+```bash
 sysctl net.ipv4.ip_forward=0
+```
 ![Host 1](Images/Week_4_Host1.png)
 ![Host 2](Images/Week_4_Host2.png)
 ![Host 3](Images/Week_4_Host3.png)
@@ -53,33 +56,24 @@ sysctl net.ipv4.ip_forward=0
 ip route show
 
 default via 10.10.1.1 dev eth0
-10.10.1.0/24 dev eth0 proto kernel scope link src 10.10.1.2
+10.10.1.0/24 dev eth0 proto kernel scope link src 10.10.1.101
 ![Host 1](Images/Week_4.2.png)
-
-### Host2
-
-ip route show
-
-default via 10.10.1.1 dev eth0
-10.10.1.0/24 dev eth0 proto kernel scope link src 10.10.1.3
-
-![Host 2](Images/Week_4.2.png)
 
 ### Host3
 
 ip route show
 
 default via 10.10.2.1 dev eth0
-10.10.2.0/24 dev eth0 proto kernel scope link src 10.10.2.2
+10.10.2.0/24 dev eth0 proto kernel scope link src 10.10.2.103
 
-![Host 3](Images/Week_4.2.png)
+![Host 3](Images/Week_4.3.png)
 
 ### Router1
 
 ping 10.10.2.2
 
-64 bytes from 10.10.2.2: icmp_seq=1 ttl=63 time=1.2 ms
-64 bytes from 10.10.2.2: icmp_seq=2 ttl=63 time=1.1 ms
+64 bytes from 10.10.2.103: icmp_seq=1 ttl=63 time=1.2 ms
+64 bytes from 10.10.2.103: icmp_seq=2 ttl=63 time=1.1 ms
 
 ![Host 1](Images/Week_4_Ping.png)
 
@@ -114,8 +108,8 @@ Observe how dynamic routing is set up and handles network changes.
 show ip ospf neighbor
 
 Neighbor ID     Pri State   Dead Time   Address       Interface
-2.2.2.2           1 Full    00:00:30    10.0.12.2     eth1
-3.3.3.3           1 Full    00:00:30    10.0.13.2     eth2
+10.10.4.2         1 Full    37.398s     10.10.2.2      eth1
+10.10.5.3         1 Full    31.217s     10.10.3.3      eth2
 
 ![OSPF Neighbour](Images/Week_4_OSPFfrr1.png)
 
@@ -123,8 +117,12 @@ Neighbor ID     Pri State   Dead Time   Address       Interface
 
 show ip ospf route
 
-O 10.0.4.0/24 [110/2] via 10.0.12.2, eth1
-O 10.0.5.0/24 [110/3] via 10.0.13.2, eth2
+N 10.10.1.0/24 [110/2] via 0.0.0.0, eth0
+N 10.10.2.0/24 [110/3] via 0.0.0.0, eth1
+N 10.10.3.0/24 [110/2] via 0.0.0.0, eth2
+N 10.10.4.0/24 [110/3] via 10.10.2.2 eth1
+N 10.10.5.0/24 [110/2] via 10.10.3.3, eth2
+N 10.10.6.0/24 [110/3] via 10.10.2.2, 10.10.3.3, eth1,eth2
 
 ![OSPF Route](Images/Week_4_OSPFfrr2.png)
 
@@ -132,9 +130,14 @@ O 10.0.5.0/24 [110/3] via 10.0.13.2, eth2
 
 show ip route
 
-O 10.0.4.0/24 via 10.0.12.2 dev eth1
-O 10.0.5.0/24 via 10.0.13.2 dev eth2
-C 10.0.1.0/24 is directly connected
+C 10.10.1.0/24 is directly connected
+C 10.10.2.0/24 is directly connected
+C 10.10.3.0/24 is directly connected
+O 10.10.4.0/24 via 10.10.2.2, eth1
+O 10.10.5.0/24 via 10.10.3.3, eth2
+O 10.10.6.0/24 via 10.10.2.2, eth1
+O 10.10.6.0/24 via 10.10.3.3, eth2
+
 
 ![IP Route](Images/Week_4_OSPFfrr3.png)
 
@@ -142,19 +145,19 @@ C 10.0.1.0/24 is directly connected
 
 | Router | Destination | Next Node |
 | ------ | ----------- | --------- |
-| FRR1   | 10.0.4.0    | FRR2      |
-| FRR1   | 10.0.5.0    | FRR3      |
-| FRR2   | 10.0.5.0    | FRR4      |
-| FRR3   | 10.0.4.0    | FRR4      |
-| FRR4   | 10.0.1.0    | FRR2      |
+| FRR1   | 0.0.0.0     | FRR2      |
+| FRR1   | 10.10.2.1   | FRR3      |
+| FRR2   | 10.10.2.1   | FRR4      |
+| FRR3   | 0.0.0.0     | FRR4      |
+| FRR4   | 10.10.4.4    | FRR2      |
 
 ### Traceroute (Before Link Failure)
 
 traceroute <Host2-IP>
 
-1  10.0.1.1 (FRR1)
-2  10.0.12.2 (FRR2)
-3  10.0.24.2 (FRR4)
+1  10.10.1.1 (FRR1)
+2  10.10.3.3 (FRR2)
+3  10.10.4.4 (FRR4)
 4  Host2
 
 ![Traceroute](Images/Week_4_OSPFtRout1.png)
@@ -164,10 +167,9 @@ traceroute <Host2-IP>
 - This disconnects FRR2 ↔ FRR4
 
 ### Traceroute (After Link Failure)
-1  10.0.1.1 (FRR1)
-2  10.0.13.2 (FRR3)
-3  10.0.34.2 (FRR4)
-4  Host2
+1  10.10.6.4 (FRR1)
+
+
 
 ![Traceroute](Images/Week_4_OSPFtRout2.png)
 
@@ -188,8 +190,8 @@ traceroute <Host2-IP>
 
 
 ## Files Submitted
-![View-Routes-12315332.gns3project](Images/Week_4_OSPFtRout2.png)
-![OSPF-Basics-12315332](Images/Week_4_OSPFtRout2.png)
+![View-Routes-12315332.gns3project](Images/Testing.gns3project)
+![OSPF-Basics-12315332](Images/Images/OSPF-Basics-12315332.gns3project)
 ![OSPF-Basics-12315332-network](Images/OSPF-Basics-12315322-network.png)
 ![Network Topology](Images/Week_4.1.png)
 
