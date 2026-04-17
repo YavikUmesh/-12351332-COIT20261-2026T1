@@ -56,7 +56,7 @@ The ip neigh show command is used to view the neighbor (ARP) table.
 
 ## Outputs - Task 1
 ![Default Gateway Output](Images/Week_6_PingNeighbour.png)
-- ![Default Gateway Output](Images/Setting-IP-12315332.gns3project)
+- ![IP Addresses to Hardware Addresses](Images/Setting-IP-12315332.gns3project)
 
 
 # Task 2: Default Gateways
