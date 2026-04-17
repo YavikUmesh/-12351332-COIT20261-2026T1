@@ -62,12 +62,6 @@ ARP tables checked using arp -a on each host.
 - ![Vlan Network](Images/Vlan-Basics-12315332.gns3project)
 
 
-
-### Screenshot Notes:
-
-Vlan-Basics-12315332-ports.png shows output of ovs-vsctl show with correct tags on eth1–eth4.
-
-
 # Task 2: Setup VLANs on a Router (Vlan-Router)
 ## Project Name
 
