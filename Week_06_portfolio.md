@@ -10,6 +10,7 @@
 - 4 × Linux Hosts (Host A, Host B, Host C, Host D)
 - 1 × Ethernet Switch
 - All hosts connected to the same switch (same LAN/subnet)
+  
 ![Default Gateway](Images/Week_6_NetworkTopology.png)
 
 
