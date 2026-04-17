@@ -190,8 +190,9 @@ traceroute <Host2-IP>
 
 
 ## Files Submitted
-![View-Routes-12315332.gns3project](Images/Testing.gns3project)
-![OSPF-Basics-12315332](Images/Images/OSPF-Basics-12315332.gns3project)
+- ![View-Routes-12315332.gns3project](Images/Testing.gns3project)
+- ![OSPF-Basics-12315332](Images/Images/OSPF-Basics-12315332.gns3project)
+  
 ![OSPF-Basics-12315332-network](Images/OSPF-Basics-12315322-network.png)
 ![Network Topology](Images/Week_4.1.png)
 
