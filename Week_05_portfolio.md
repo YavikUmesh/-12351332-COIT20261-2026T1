@@ -16,6 +16,8 @@
   - Host 3 → Switch `eth3`
   - Host 4 → Switch `eth4`
   - Switch `eth0` left unused
+    
+![Vlan Network Topology](Images/Week_5_NetworkTopologyVLAN.png.png)
 
 ### IP Addressing (Same Subnet - Before VLANs)
 All hosts configured with IP addresses, for example:
@@ -43,6 +45,9 @@ ovs-vsctl set port eth2 tag=10
 ovs-vsctl set port eth3 tag=20
 ovs-vsctl set port eth4 tag=20
 ```
+![Vlan Network Topology](Images/Week_5_SetOVS.png)
+
+![Vlan All Host](Images/Week_5_ShowOVS.png)
 
 ## Verification
 
@@ -52,9 +57,11 @@ ARP tables checked using arp -a on each host.
 
 ### Outputs - Task 1
 
-Exported Project: Vlan-Basics-12315332.gns3project
-Network Screenshot: Vlan-Basics-12315332-network.png
-Switch Ports Screenshot: Vlan-Basics-12315332-ports.png
+![Vlan Network Topology](Images/Week_5_NetworkTopologyVLAN.png.png)
+![Vlan Ping Test](Images/Week_5_PingTest.png)
+![Vlan Network](Images/Vlan-Basics-12315332.gns3project)
+
+
 
 ### Screenshot Notes:
 
@@ -72,14 +79,16 @@ Project: Vlan-Router-<YourStudentID>
 1 × OpenvSwitch
 1 × Linux Router (connected to Switch eth0)
 
+![Vlan Network Topology](Images/Week_5_NetworkTopologyRouter.png)
+
 IP Addressing (Different Subnets)
 
-| Host   | VLAN | Subnet | IP Address    || Gateway   |
-|--------|-------------|---------|---------------||---------------|
-| Host 1 | 10        | 192.168.78.0/24    | 192.168.78.10      |192.168.78.1|
-| Host 2 | 10        | 192.168.78.0/24   | 192.168.78.20      |192.168.78.1|
-| Host 3 | 20       | 192.168.79.0/24 | 192.168.79.30     |192.168.79.1|
-| Host 4 | 20        | 192.168.79.0/24    | 192.168.79.40    |192.168.79.1|
+| Host   | VLAN | Subnet | IP Address    |
+|--------|------|--------------|---------------|
+| Host 1 | 10   | 10.10.1.0/24    | 10.10.1.101 |     
+| Host 2 | 10   | 10.10.1.0/24   | 10.10.1.102 |     
+| Host 3 | 20   | 10.10.1.0/24 | 10.10.1.103  |  
+| Host 4 | 20   | 10.10.1.0/24    | 10.10.1.104   |
 
 
 ### Switch Configuration
@@ -99,16 +108,16 @@ ovs-vsctl set port eth0 trunks=[]
 Commands executed on the Linux Router:
 ```Bash
 # Create VLAN sub-interfaces
-ip link add link eth0 name eth0.678 type vlan id 678
-ip link add link eth0 name eth0.679 type vlan id 679
+ip link add link eth0 name eth0.10 type vlan id 10
+ip link add link eth0 name eth0.20 type vlan id 20
 
 # Bring sub-interfaces up
-ip link set eth0.678 up
-ip link set eth0.679 up
+ip link set eth0.10 up
+ip link set eth0.20 up
 
 # Assign IP addresses to sub-interfaces
-ip address add 192.168.78.1/24 dev eth0.678
-ip address add 192.168.79.1/24 dev eth0.679
+ip address add 10.10.1.0/24 dev eth0.10
+ip address add 10.10.1.0/24 dev eth0.20
 
 # Enable IP forwarding
 sysctl -w net.ipv4.ip_forward=1
@@ -117,34 +126,15 @@ sysctl -w net.ipv4.ip_forward=1
 ## Verification
 
 All hosts can now ping each other (inter-VLAN routing working via the Linux Router).
-Hosts in VLAN 678 can reach hosts in VLAN 679 and vice versa.
+Hosts in VLAN 10 can reach hosts in VLAN 20 and vice versa.
 ping tests performed between all combinations.
 ARP tables verified on hosts and router.
-
-## Outputs - Task 2
-
-Exported Project: Vlan-Router-<YourStudentID>.gns3project
-Network Screenshot: Vlan-Router-<YourStudentID>-network.png
-Switch Ports Screenshot: Vlan-Router-<YourStudentID>-ports.png
-
-### Screenshot Notes:
-
-Vlan-Router-<YourStudentID>-ports.png clearly shows:
-eth1 and eth2 tagged with VLAN 678
-eth3 and eth4 tagged with VLAN 679
-eth0 configured as trunk (trunks=[])
 
 
 ## Files included in this repository:
 
-- Vlan-Basics-<YourStudentID>.gns3project
-- Vlan-Router-<YourStudentID>.gns3project
-- Vlan-Basics-<YourStudentID>-network.png
-- Vlan-Basics-<YourStudentID>-ports.png
-- Vlan-Router-<YourStudentID>-network.png
-- Vlan-Router-<YourStudentID>-ports.png
-
-![Vlan](Images/Week_5.1.png)
+![Vlan Network Topology](Images/Week_5_NetworkTopologyRouter.png)
+![Vlan](Images/Vlan-Router-12315332.gns3project)
 
 
 
