@@ -98,8 +98,8 @@ curl http://<Linux-Server-IP>/
 
 - GUI HTTP Client: Firefox (via noVNC) – user-friendly but resource-heavy.
 - CLI HTTP Clients:
- - wget: Simple downloading of web pages (good for basic retrieval).
- - curl: More powerful and flexible (better for scripting and advanced requests).
+  - wget: Simple downloading of web pages (good for basic retrieval).
+  - curl: More powerful and flexible (better for scripting and advanced requests).
 
 - HTTP traffic can be observed in packet captures across routers.
 - Command-line tools are preferred for automation and server testing.
