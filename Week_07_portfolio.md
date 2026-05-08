@@ -12,7 +12,7 @@
 - 1 OpenWRT Router
 - All connected via an Ethernet switch to `eth0` of the OpenWRT router
 
-![Network Topology](DHCP-Client-<studentid>-network.png)
+![Network Topology](Images/Week_7.png)
 
 ### Activities Summary
 
@@ -22,7 +22,7 @@ ifconfig eth0
 # or
 ip addr show eth0
 ```
-(Router acts as DHCP server by default)
+(Router acts as DHCP server by default)![Router Acts as DHCP server](Images/Week_7.png)
 
 ## Host 1 - Manual DHCP Client:
 ```
@@ -35,7 +35,7 @@ udhcpc
 # After DHCP
 ifconfig eth0
 ```
-<img src="DHCP-Client-%3Cstudentid%3E-host1.png" alt="Host 1 DHCP Client">
+![DHCP Client](Images/Week_7.png)
 
 ### Host 2 - Automatic DHCP via /etc/network/interfaces
 
@@ -59,7 +59,7 @@ iface eth0 inet dhcp
 - DHCP ACK (from OpenWRT)
 
 #### Files:
-
+![Network Topology](Images/Week_7.png)
 - Project: DHCP-Client-<studentid>.gns3project
 - Topology: DHCP-Client-<studentid>-network.png
 - Host 1: DHCP-Client-<studentid>-host1.png
@@ -68,7 +68,7 @@ iface eth0 inet dhcp
 
 ## Task 2: DHCP Server Basics
 
-Project: DHCP-Server-Basics-<studentid>
+Project: DHCP-Server-Basics-<studentid>![Network Topology](Images/Week_7.png)
 
 ### Original DHCP Configuration (via UCI)
 ```
@@ -79,7 +79,7 @@ uci commit dhcp
 
 ### Final DHCP Configuration
 
-<img src="DHCP-Server-Basics-%3Cstudentid%3E-config-final.png" alt="Final DHCP Config">
+![DHCP Server Basic](Images/Week_7.png)
 
 ### Static Lease for Host 3
 ```
@@ -96,7 +96,7 @@ uci commit dhcp
 ```
 cat /etc/dhcp.leases
 ```
-<img src="DHCP-Server-Basics-%3Cstudentid%3E-leases.png" alt="DHCP Leases">
+![DHCP Lease](Images/Week_7.png)
 
 #### Summary of Leases:
 
@@ -107,7 +107,7 @@ cat /etc/dhcp.leases
 
 ## Task 3: Hosts File and Simple DNS Entries
 
-Project: DNS-Hosts-<studentid>
+Project: DNS-Hosts-<studentid>![Network Topology](Images/Week_7.png)
 
 ### 1. Local /etc/hosts on Host 1
 
@@ -147,7 +147,7 @@ uci commit dhcp
 ping host2.example.com      # Resolved via Host 1's /etc/hosts
 ping www.example.com        # Resolved via OpenWRT DNS
 ```
-
+![Network Topology](Images/Week_7.png)
 
 
 
